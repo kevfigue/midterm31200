@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formerly Neely Menu</title>
+    <link rel="stylesheet/less" type="text/css" href="./styles/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>    
+    <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <h1>kevfigue</h1>
+    <div class="menu-cont">
+        <a class="hamburger" href="#navbar">
+
+            <i class="fa fa-bars fa-lg" id="bars-icon"></i>
+    
+          </a>    
+
+        <nav id="navbar">
+            <a class="close" href="#">
+
+                <i class="fa fa-close fa-lg" id="close-icon"></i>
+      
+              </a>      
+            <ul>
+                <li><a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="https://kevfigue.github.io/NewlyFixedNeelyLab/">Bulletin</a></li>
+                <li><a href="week.html">Week</a></li>
+            </ul>
+        </nav>
+    </div>
+
+        <main>
+            <div class="demo">
+            </div>
+            <div class="rec2"> 
+            </div>
+        </main>
+        <script type="text/javascript">
+
+            
+            const snacksData = [
+                {
+                snackName: "Cheez-Its",
+                calories: 120,
+                fatGrams: 8,
+                carbsGrams: 17,
+                proteinGrams: 3,
+                pic: "images\\cheez.avif"
+                },
+                {
+                snackName: "Sour Skittles",
+                calories: 210,
+                fatGrams: 2,
+                carbsGrams: 47,
+                proteinGrams: 0,
+                pic: "images\\skittles.webp"
+                },
+                {
+                snackName: "Doritos",
+                calories: 150,
+                fatGrams: 8,
+                carbsGrams: 18,
+                proteinGrams: 2,
+                pic: "images\\doritos.webp"
+                },
+                {
+                snackName: "Hostess Honey Buns",
+                calories: 480,
+                fatGrams: 24,
+                carbsGrams: 61,
+                proteinGrams: 6,
+                pic: "images\\bun.png"
+                },
+                {
+                snackName: "Planters Peanuts",
+                calories: 170,
+                fatGrams: 14,
+                carbsGrams: 5,
+                proteinGrams: 7,
+                pic: "images\\peanuts.png"
+                },
+            ];
+
+            const pageDemo = document.querySelector(".demo");
+            // pageDemo.textContent = "Recipe 1, Dynamically changing web page content"
+            pageDemo.innerHTML = "<h3>Recipe 1, Dynamically changing web page content</h3><p>Ingredients</p>"
+            let demoList = document.createElement("ul");
+            let listPoint = document.createElement("li");
+            listPoint.textContent = "The DOM createElement method";
+            demoList.append(listPoint);
+            listPoint = document.createElement("li");
+            listPoint.textContent = "The DOM append method";
+            demoList.append(listPoint);
+            listPoint = document.createElement("li");
+            listPoint.textContent = "Template literals";
+            demoList.append(listPoint);
+            listPoint = document.createElement("li");
+            listPoint.textContent = "The innerText method";
+            demoList.append(listPoint);
+            listPoint = document.createElement("li");
+            listPoint.textContent = "The innerHTML method";
+            demoList.append(listPoint);
+            pageDemo.append(demoList);
+
+            const recipe2 = document.querySelector(".rec2");
+            recipe2.innerHTML =  "<h3>Recipe 2, Displaying JSON Data</h3><p>Ingredients</p>"
+            let ingList = document.createElement("ul");
+            let ingPoint = document.createElement("li");
+            ingPoint.textContent = "The DOM createElement method";
+            ingList.append(ingPoint);
+            ingPoint = document.createElement("li");
+            ingPoint.textContent = "The DOM append method";
+            ingList.append(ingPoint);
+            ingPoint = document.createElement("li");
+            ingPoint.textContent = "Array of objects";
+            ingList.append(ingPoint);
+            ingPoint = document.createElement("li");
+            ingPoint.textContent = "Choice of images";
+            ingList.append(ingPoint);
+            recipe2.append(ingList);
+
+            let snackTitle = document.createElement("h4");
+            snackTitle.textContent = "\n\nSnack Nutrition";
+
+            let snackDiv = document.createElement("div");
+            let snackList = document.createElement("ul");
+            snacksData.forEach((snack)=>{
+                let snackItem = document.createElement("li");
+                snackItem.textContent = `${snack.snackName} are ${snack.calories} calories,
+                ${snack.fatGrams}g of fat, ${snack.carbsGrams}g of carbs, and ${snack.proteinGrams}g of protein.`;
+                let snackImage = document.createElement("img");
+                snackImage.src = snack.pic;
+                snackItem.append(snackImage);
+                snackList.append(snackItem);
+            });
+            snackDiv.append(snackTitle);
+            snackDiv.append(snackList);
+            recipe2.append(snackDiv);
+
+
+        </script>
+</body>
+</html>
